@@ -1,0 +1,23 @@
+# Ansible
+*.retry
+.vault_pass
+vault_password
+
+# Временные файлы
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets (если случайно создадутся)
+*secret*
+*password*
+!group_vars/*/examp.yml

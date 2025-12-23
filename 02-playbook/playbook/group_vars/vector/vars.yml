@@ -1,0 +1,21 @@
+---
+vector_version: "0.41.1"
+vector_install_dir: "/opt/vector"
+vector_config_dir: "/etc/vector"
+vector_config:
+  sources:
+    demo_logs:
+      type: "demo_logs"
+      format: "syslog"
+      interval: 1
+  sinks:
+    to_clickhouse:
+      type: "clickhouse"
+      inputs:
+        - "demo_logs"
+      database: "logs"
+      endpoint: "http://192.168.1.68:8123"
+      table: "vector_table"
+      compression: "gzip"
+      healthcheck: true
+      skip_unknown_fields: true

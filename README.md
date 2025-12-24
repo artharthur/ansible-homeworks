@@ -15,10 +15,6 @@
 - Плагины подключения (local)
 - Настройка localhost через local connection
 
-**Окружение:** 
-- Control node: macOS
-- Managed hosts: 2 LXC контейнера на Proxmox (Ubuntu 22.04)
-
 **[Полный отчёт →](01-intro/README.md)**
 
 ---
@@ -33,11 +29,26 @@
 - Режимы --check и --diff
 - Тест на идемпотентность
 
-**Технологии:**
-- ClickHouse — аналитическая СУБД для логов
-- Vector — агент для сбора и отправки логов
-
 **[Полный отчёт →](02-playbook/README.md)**
+
+---
+
+### [03-lighthouse](03-lighthouse/) — Использование Ansible
+
+**Задания:**
+- Установка полного стека: ClickHouse + Vector + Lighthouse
+- Настройка nginx для Lighthouse
+- Git clone репозитория
+- Шаблонизация конфигов
+- Проверка идемпотентности
+
+**Технологии:**
+- ClickHouse — СУБД для логов
+- Vector — агент сбора логов
+- Lighthouse — веб-интерфейс для ClickHouse
+- Nginx — веб-сервер
+
+**[Полный отчёт →](03-lighthouse/README.md)**
 
 ---
 
@@ -47,7 +58,6 @@
 - Proxmox VE
 - LXC контейнеры (Ubuntu 22.04)
 - SSH с ProxyJump
-- ClickHouse
-- Vector
+- ClickHouse, Vector, Lighthouse, Nginx
 
 ---

@@ -1,0 +1,5 @@
+---
+lighthouse_repo: "https://github.com/VKCOM/lighthouse.git"
+lighthouse_dir: "/var/www/lighthouse"
+lighthouse_port: 80
+clickhouse_host: "192.168.1.68"

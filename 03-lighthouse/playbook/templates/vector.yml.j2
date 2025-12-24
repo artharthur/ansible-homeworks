@@ -1,0 +1,25 @@
+# Vector configuration file
+# Managed by Ansible - do not edit manually
+
+sources:
+{% for source_name, source_config in vector_config.sources.items() %}
+  {{ source_name }}:
+{% for key, value in source_config.items() %}
+    {{ key }}: {{ value | to_json }}
+{% endfor %}
+{% endfor %}
+
+sinks:
+{% for sink_name, sink_config in vector_config.sinks.items() %}
+  {{ sink_name }}:
+{% for key, value in sink_config.items() %}
+{% if key == 'inputs' %}
+    {{ key }}:
+{% for input in value %}
+      - "{{ input }}"
+{% endfor %}
+{% else %}
+    {{ key }}: {{ value | to_json }}
+{% endif %}
+{% endfor %}
+{% endfor %}

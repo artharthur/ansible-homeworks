@@ -54,11 +54,27 @@
 
 ---
 
+### [05-testing](05-testing/) — Тестирование roles
+
+- Настройка molecule для тестирования ролей
+- Создание сценариев default и compatibility
+- Настройка tox для автоматизации тестов
+- Тестирование на разных окружениях
+
+**Репозиторий роли с тестами:**
+- [vector-role](https://github.com/artharthur/vector-role) (теги 1.1.0, 1.2.0)
+
+**[Полный отчёт →](05-testing/README.md)**
+
+---
+
 ## Технологии
 
 - Ansible 2.10+
+- Molecule, Tox
 - Proxmox VE
 - LXC контейнеры (Ubuntu 22.04)
+- Docker
 - ClickHouse, Vector, Lighthouse, Nginx
 
 ---

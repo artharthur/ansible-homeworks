@@ -78,3 +78,17 @@
 - ClickHouse, Vector, Lighthouse, Nginx
 
 ---
+
+### [06-module](06-module/) — Создание собственных модулей
+
+- Написание собственного Ansible модуля на Python
+- Создание коллекции с модулем и ролью
+- Сборка и публикация коллекции
+- Установка коллекции из tar.gz архива
+
+**Репозиторий коллекции:**
+- [my_own_collection](https://github.com/artharthur/my_own_collection)
+
+**[Полный отчёт →](06-module/README.md)**
+
+---

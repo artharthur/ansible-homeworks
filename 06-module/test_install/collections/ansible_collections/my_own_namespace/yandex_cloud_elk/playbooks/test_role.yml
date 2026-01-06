@@ -1,0 +1,8 @@
+---
+- name: Test create_file role
+  hosts: localhost
+  connection: local
+  roles:
+    - role: my_own_namespace.yandex_cloud_elk.create_file
+      file_path: /tmp/role_test.txt
+      file_content: "Created by role from collection!"

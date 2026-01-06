@@ -1,80 +1,50 @@
-# Ansible — Домашние задания
-
-Репозиторий с выполненными домашними заданиями по курсу Ansible.
+# Домашнее задание к занятию 5 «Тестирование roles»
 
 ---
 
-## Выполненные модули
+## Описание
 
-### [01-intro](01-intro/) — Введение в Ansible
+Настроено тестирование роли vector-role с помощью Molecule и Tox.
 
-- Запуск playbook на test и prod окружениях
-- Работа с group_vars и переменными
-- Шифрование ansible-vault
-- Плагины подключения (local)
+## Что сделано
 
-**[Полный отчёт →](01-intro/README.md)**
+- Добавлен сценарий Molecule default для тестирования в Docker
+- Добавлен сценарий compatibility для тестирования на разных дистрибутивах
+- Настроен Tox для автоматизации запуска тестов
+- Написаны verify-тесты с проверкой бинарника и конфига Vector
 
----
+## Репозиторий роли
 
-### [02-playbook](02-playbook/) — Работа с Playbook
-
-- Установка ClickHouse из репозитория
-- Установка Vector из tar.gz архива
-- Использование модулей get_url, unarchive, template, file
-- Проверка ansible-lint, --check, --diff
-
-**[Полный отчёт →](02-playbook/README.md)**
-
----
-
-### [03-lighthouse](03-lighthouse/) — Использование Ansible
-
-- Установка полного стека: ClickHouse + Vector + Lighthouse
-- Настройка nginx для Lighthouse
-- Git clone репозитория
-- Шаблонизация конфигов
-
-**[Полный отчёт →](03-lighthouse/README.md)**
-
----
-
-### [04-roles](04-roles/) — Работа с roles
-
-- Разбиение playbook на отдельные роли
-- Создание ролей vector и lighthouse
-- Использование внешней роли clickhouse
-- Публикация ролей в отдельных репозиториях
-
-**Репозитории ролей:**
 - [vector-role](https://github.com/artharthur/vector-role)
-- [lighthouse-role](https://github.com/artharthur/lighthouse-role)
+  - Тег 1.1.0 — добавлен Molecule (сценарий default)
+  - Тег 1.2.0 — добавлен Tox и сценарий compatibility
 
-**[Полный отчёт →](04-roles/README.md)**
+## Molecule
 
----
+Сценарий default использует Docker с образом Ubuntu 22.04. Тесты проверяют:
+- Наличие бинарника Vector
+- Валидность конфигурации
+```bash
+cd vector-role
+molecule test
+```
 
-### [05-testing](05-testing/) — Тестирование roles
+## Tox
 
-- Настройка molecule для тестирования ролей
-- Создание сценариев default и compatibility
-- Настройка tox для автоматизации тестов
-- Тестирование на разных окружениях
+Автоматизирует запуск Molecule на разных окружениях:
+```bash
+cd vector-role
+tox
+```
 
-**Репозиторий роли с тестами:**
-- [vector-role](https://github.com/artharthur/vector-role) (теги 1.1.0, 1.2.0)
+## Скриншоты
 
-**[Полный отчёт →](05-testing/README.md)**
+**Molecule test:**
 
----
+![Molecule](screenshots/05-molecule-test-passed.png)
 
-## Технологии
+**Tox:**
 
-- Ansible 2.10+
-- Molecule, Tox
-- Proxmox VE
-- LXC контейнеры (Ubuntu 22.04)
-- Docker
-- ClickHouse, Vector, Lighthouse, Nginx
+![Tox](screenshots/06-tox-passed.png)
 
 ---

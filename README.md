@@ -68,17 +68,6 @@
 
 ---
 
-## Технологии
-
-- Ansible 2.10+
-- Molecule, Tox
-- Proxmox VE
-- LXC контейнеры (Ubuntu 22.04)
-- Docker
-- ClickHouse, Vector, Lighthouse, Nginx
-
----
-
 ### [06-module](06-module/) — Создание собственных модулей
 
 - Написание собственного Ansible модуля на Python
@@ -92,3 +81,12 @@
 **[Полный отчёт →](06-module/README.md)**
 
 ---
+
+## Технологии
+
+- Ansible 2.10+
+- Molecule, Tox
+- Proxmox VE
+- LXC контейнеры (Ubuntu 22.04)
+- Docker
+- ClickHouse, Vector, Lighthouse, Nginx
